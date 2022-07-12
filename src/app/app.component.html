@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="form">
+    <h1>SIGN UP</h1>
+    <form (ngSubmit)="submitDetails()" name="Form" #myForm="ngForm" novalidate>
+      <div class="fields">
+
+        <input type="text" name="fname" [(ngModel)]="fname"  placeholder="Enter first name" required
+          #name="ngModel" />
+        <div class="error">
+          <small *ngIf="name.invalid && name.touched">First name is required</small>
+        </div>
+
+        <input name="lname" [(ngModel)]="lname" type="text" placeholder="Enter last name" required #lastName="ngModel"  />
+        <div class="error">
+          <small *ngIf="lastName.invalid && lastName.touched">Last name is required </small>
+          <small *ngIf="lname && lname.length<3 && lastName.touched">should be greater than 3 character</small>
+        </div>
+
+        <input name="email" [(ngModel)]="email" type="email" placeholder="Enter email" required #emails="ngModel"  />
+        <div class="error" >
+          <small *ngIf="emails.invalid && emails.touched">Email is required</small>
+          <small *ngIf="email && checkPattern(email) && emails.touched">Invalid email</small>
+        
+        </div>
+
+        <input name="phone" [(ngModel)]="phone" type="tel" placeholder="Enter phone number" required #phoneValue="ngModel" [maxlength]="10"/>
+        <div class="error">
+          <small *ngIf="phoneValue.invalid && phoneValue.touched">Phone number is required</small>
+          <small *ngIf="phone && phone.length<10 && lastName.touched">Should be 10 digits</small>
+
+        </div>
+
+        <input name="password" [(ngModel)]="password" type="password" placeholder="Enter password" required #passwordValue="ngModel" />
+        <div class="error">
+          <small *ngIf="passwordValue.invalid && passwordValue.touched">Password is required</small>
+        </div>
+
+      
+      </div>
+      <div class="submit">
+        <button  value="Reset">Reset</button>
+        <button [disabled]="myForm.invalid">SUBMIT</button>
+      </div>
+
+    </form>
+  </div>
+</div>

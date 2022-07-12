@@ -1,0 +1,79 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(7, 7, 7);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .form {
+    text-align: center;
+    background-color: rgb(85, 88, 90);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.container .form h1 {
+    margin-bottom: 2rem;
+}
+
+.container form .fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 20px; */
+    
+    /* width: 50%; */
+
+}
+
+.container form .fields .error {
+    color: red;
+    /* background-color: aliceblue; */
+    height: 1rem;
+    text-align: start;
+    margin-top: .1rem;
+    margin-bottom: .5rem;
+}
+
+.container form input {
+  
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 2rem;
+    width: 300px;
+    padding: 0 .5rem;
+}
+
+.container form input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}
+
+.container .form form .submit {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .form form .submit button:first-child{
+    background-color: rgb(118, 186, 245);
+    
+}
+.container .form form .submit button {
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    cursor: pointer;
+    background-color: rgb(105, 252, 85);
+    font-weight: 900;
+    opacity: 1;
+}
+
+.container .form form .submit button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+
+}
